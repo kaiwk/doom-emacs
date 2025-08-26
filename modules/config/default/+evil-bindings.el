@@ -590,7 +590,9 @@
        :desc "From evil register"            "r"   #'evil-show-registers
        :desc "Snippet"                       "s"   #'yas-insert-snippet
        :desc "Unicode"                       "u"   #'insert-char
-       :desc "From clipboard"                "y"   #'+default/yank-pop)
+       :desc "From clipboard"                "y"   #'+default/yank-pop
+       (:when (modulep! :ui hl-todo)
+         :desc "Todo"                        "t"   #'hl-todo-insert))
 
       ;;; <leader> l --- live share/collab
       ;;; TODO Do you like this location for this map? This was the best idea we

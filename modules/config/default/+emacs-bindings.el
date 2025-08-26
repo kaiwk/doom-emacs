@@ -156,7 +156,9 @@
        :desc "Current file path"             "F"   (cmd!! #'+default/insert-file-path t)
        :desc "Snippet"                       "s"   #'yas-insert-snippet
        :desc "Unicode"                       "u"   #'insert-char
-       :desc "From clipboard"                "y"   #'+default/yank-pop)
+       :desc "From clipboard"                "y"   #'+default/yank-pop
+       (:when (modulep! :ui hl-todo)
+         :desc "Todo"                        "t"   #'hl-todo-insert))
 
       ;;; <leader> n --- notes
       (:prefix-map ("n" . "notes")
